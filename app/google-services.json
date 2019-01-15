@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "132058251606",
+    "firebase_url": "https://socialnetwork-35b77.firebaseio.com",
+    "project_id": "socialnetwork-35b77",
+    "storage_bucket": "socialnetwork-35b77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132058251606:android:812aaba35b10e98f",
+        "android_client_info": {
+          "package_name": "com.example.arafat.socialnetwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132058251606-8n73gspdcrqhuv3ftugas8885v5t2deo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arafat.socialnetwork",
+            "certificate_hash": "a17dd40787f606458129992b31c5b63ac6d2f5c1"
+          }
+        },
+        {
+          "client_id": "132058251606-tpmoocmcm9mjo3j8k8abar3ljf2f4hdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYzI5O3FmFM9nF1z0RtHRNjaR3hxGgUc4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132058251606-tpmoocmcm9mjo3j8k8abar3ljf2f4hdt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
