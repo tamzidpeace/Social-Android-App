@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nav_settings:
                 Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 break;
 
             case R.id.nav_logout:

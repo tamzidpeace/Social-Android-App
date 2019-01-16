@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+    android:background="@drawable/register"
     tools:context=".RegisterActivity">
 
     <ImageView
@@ -58,6 +58,8 @@
         android:text="Confirm Password" />
 
     <Button
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:id="@+id/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
