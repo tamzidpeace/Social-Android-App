@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 
 
@@ -130,7 +129,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nav_logout:
                 Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                mAuth.signOut();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
                 break;
         }
     }
