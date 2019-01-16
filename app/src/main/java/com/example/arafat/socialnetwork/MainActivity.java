@@ -1,5 +1,6 @@
 package com.example.arafat.socialnetwork;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nav_logout:
                 Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
                 break;
         }
     }
