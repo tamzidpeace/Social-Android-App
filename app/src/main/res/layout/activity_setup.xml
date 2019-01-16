@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register"
+    tools:context=".SetupActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/setting_circle_profile"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/profile"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:background="@drawable/inputs"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/username"
+        android:layout_margin="10dp"
+        android:id="@+id/setting_username"
+        android:hint="Username"
+        android:layout_below="@id/setting_circle_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:background="@drawable/inputs"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/name"
+        android:layout_margin="10dp"
+        android:id="@+id/setting_full_name"
+        android:hint="Full name"
+        android:layout_width="match_parent"
+        android:layout_below="@id/setting_username"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:background="@drawable/inputs"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/country"
+        android:layout_margin="10dp"
+        android:id="@+id/setting_country"
+        android:hint="Country"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/setting_full_name"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:padding="15dp"
+        android:background="@drawable/button"
+        android:layout_below="@id/setting_country"
+        android:id="@+id/setting_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save"/>
+
+</RelativeLayout>
