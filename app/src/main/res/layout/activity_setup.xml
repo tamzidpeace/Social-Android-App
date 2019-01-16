@@ -55,6 +55,7 @@
         android:padding="15dp"
         android:background="@drawable/button"
         android:layout_below="@id/setting_country"
+        android:layout_margin="10dp"
         android:id="@+id/setting_save_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

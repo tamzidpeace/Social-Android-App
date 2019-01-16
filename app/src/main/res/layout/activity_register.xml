@@ -27,7 +27,7 @@
         android:background="@drawable/inputs"
         android:drawableLeft="@drawable/email"
         android:padding="10dp"
-        android:text="Email" />
+        android:hint="Email" />
 
     <EditText
         android:inputType="numberPassword"
@@ -41,7 +41,7 @@
         android:background="@drawable/inputs"
         android:drawableLeft="@drawable/password"
         android:padding="10dp"
-        android:text="Password" />
+        android:hint="Password" />
 
     <EditText
         android:inputType="numberPassword"
@@ -55,7 +55,7 @@
         android:background="@drawable/inputs"
         android:drawableLeft="@drawable/password"
         android:padding="10dp"
-        android:text="Confirm Password" />
+        android:hint="Confirm Password" />
 
     <Button
         android:textStyle="bold"
