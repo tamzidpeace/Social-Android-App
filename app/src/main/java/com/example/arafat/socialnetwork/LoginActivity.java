@@ -58,11 +58,20 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            SendUserToMainActivity();
+        }
+    }
+
     private void loginIntoAccount() {
         loadingBar.setTitle("Account Login");
         loadingBar.setMessage("Login is in progress");
         loadingBar.setCanceledOnTouchOutside(true);
-
 
         String email, password;
         email = UserEmail.getText().toString().trim();
@@ -80,29 +89,25 @@ public class LoginActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 loadingBar.dismiss();
                                 Log.d(TAG, "signInWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                updateUI(user);
+                                SendUserToMainActivity();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 loadingBar.dismiss();
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
                                 Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                updateUI(null);
-                            }
 
-                            // ...
+                            }
                         }
                     });
 
         }
     }
 
-    private void updateUI(FirebaseUser user) {
+    private void SendUserToMainActivity() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        String userEmail = user.getEmail();
-        Toast.makeText(this, "User email address is: " + userEmail, Toast.LENGTH_SHORT).show();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-
+        finish();
     }
 
     private void sendUserToRegisterActivity() {
