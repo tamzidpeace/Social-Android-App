@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private CircleImageView profileImage;
     private TextView navUserName;
+    private ImageButton addNewPost;
 
     private FirebaseAuth mAuth;
     private DatabaseReference userRef;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        addNewPost = findViewById(R.id.add_new_post_button);
 
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
@@ -102,6 +106,17 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        addNewPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SendToAddNewPostActivity();
+            }
+        });
+    }
+
+    private void SendToAddNewPostActivity() {
+        startActivity(new Intent(MainActivity.this, AddNewPost.class));
     }
 
     @Override
@@ -174,7 +189,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "friends", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.nav_post:
+            case R.id.nav_new_post:
+                SendToAddNewPostActivity();
                 Toast.makeText(this, "post", Toast.LENGTH_SHORT).show();
                 break;
 
