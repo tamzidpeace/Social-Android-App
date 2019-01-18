@@ -75,10 +75,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String image = dataSnapshot.child("profileimage").getValue().toString();
-                    String username = dataSnapshot.child("fullname").getValue().toString();
-                    navUserName.setText(username);
-                    Picasso.with(getApplicationContext()).load(image).placeholder(R.drawable.profile).into(profileImage);
+                    if (dataSnapshot.hasChild("fullname") && dataSnapshot.hasChild("profileimage")) {
+                        String username = dataSnapshot.child("fullname").getValue().toString();
+                        navUserName.setText(username);
+                        String image = dataSnapshot.child("profileimage").getValue().toString();
+                        Picasso.with(getApplicationContext()).load(image).placeholder(R.drawable.profile).into(profileImage);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Name doesn't exist", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
 
